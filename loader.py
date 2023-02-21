@@ -38,10 +38,3 @@ class Contract:
         s = s.replace('[END]', '')
         with open('./outputs/sanitized.rs', 'w') as file:
             file.write(s)
-
-#tests
-def tests():
-    c = Contract('./inputs/main.rs')
-    c.dump_metadata()
-    c.sanitize()
-tests()
