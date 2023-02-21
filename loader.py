@@ -21,14 +21,27 @@ class Contract:
     def dump_metadata(self):
         if self.meta == None:
             _meta = self.metadata()
-        if os.path.exists('./meta.json'):
-            os.remove('./meta.json')
-        open('./meta.json', 'x')
-        with open('./meta.json', 'w') as file:
+        if os.path.exists('./outputs/meta.json'):
+            os.remove('./outputs/meta.json')
+        open('./outputs/meta.json', 'x')
+        with open('./outputs/meta.json', 'w') as file:
             file.write(str(_meta))
+    def sanitize(self):
+        if os.path.exists('./outputs/sanitized.rs'):
+            os.remove('./outputs/sanitized.rs')
+        open('./outputs/sanitized.rs', 'x')
+        contract = self.read()
+        s = contract.replace('[NAME]', '')
+        s = s.replace('[ENTRY_POINT]', '')
+        s = s.replace('[VEC]', '')
+        s = s.replace('[RET]', '')
+        s = s.replace('[END]', '')
+        with open('./outputs/sanitized.rs', 'w') as file:
+            file.write(s)
+
 #tests
 def tests():
-    c = Contract('./main.rs')
+    c = Contract('./inputs/main.rs')
     c.dump_metadata()
-
+    c.sanitize()
 tests()
