@@ -1,0 +1,1 @@
+{'entry_points': ['"approve"', '"redeem"', '"get_purse"', '"migrate"'], 'vec!': ['vec![Parameter::new(ARG_ACCOUNT, CLType::Any)]', 'vec![Parameter::new(ARG_AMOUNT, CLType::U512)]', 'vec![]', 'vec![Parameter::new("owner_account", CLType::Key), Parameter::new("destination", CLType::URef)]'], 'ret': ['CLType::Unit', 'CLType::Unit', 'CLType::URef', 'CLType::URef']}
