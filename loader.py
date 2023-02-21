@@ -1,4 +1,4 @@
-from algos import parse_entry_points
+from algos import parse_entry_points, parse_entry_point_args
 class Contract:
     def __init__(self, path):
         self.path = path
@@ -12,5 +12,6 @@ class Contract:
 def tests():
     c = Contract('./main.rs')
     print(c.read())
-    print(c.entry_points())
+    e = c.entry_points()
+    print(e[0])
 tests()

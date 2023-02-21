@@ -171,9 +171,9 @@ pub extern "C" fn call(){
         // passed to child_contract
         [ENTRY_POINT]
         let approve = EntryPoint::new(
-            "approve",
-            vec![Parameter::new(ARG_ACCOUNT, CLType::Any)],
-            CLType::Unit,
+            [NAME]"approve"[NAME],
+            [VEC]vec![Parameter::new(ARG_ACCOUNT, CLType::Any)][VEC],
+            [RET]CLType::Unit[RET],
             EntryPointAccess::Public,
             EntryPointType::Contract
         );
@@ -181,9 +181,9 @@ pub extern "C" fn call(){
         // passed to child_contract
         [ENTRY_POINT]
         let redeem = EntryPoint::new(
-            "redeem",
-            vec![Parameter::new(ARG_AMOUNT, CLType::U512)],
-            CLType::Unit,
+            [NAME]"redeem"[NAME],
+            [VEC]vec![Parameter::new(ARG_AMOUNT, CLType::U512)][VEC],
+            [RET]CLType::Unit[RET],
             EntryPointAccess::Public,
             EntryPointType::Contract
         );
@@ -191,9 +191,9 @@ pub extern "C" fn call(){
         // passed to child_contract
         [ENTRY_POINT]
         let get_purse = EntryPoint::new(
-            "get_purse",
-            vec![],
-            CLType::URef,
+            [NAME]"get_purse"[NAME],
+            [VEC]vec![][VEC],
+            [RET]CLType::URef[RET],
             EntryPointAccess::Public,
             EntryPointType::Contract
         );
@@ -203,9 +203,9 @@ pub extern "C" fn call(){
         // the parent contract holds N child_contracts in it's named_keys.
         [ENTRY_POINT]
         let migrate = EntryPoint::new(
-            "migrate",
-            vec![Parameter::new("owner_account", CLType::Key), Parameter::new("destination", CLType::URef)],
-            CLType::URef,
+            [NAME]"migrate"[NAME],
+            [VEC]vec![Parameter::new("owner_account", CLType::Key), Parameter::new("destination", CLType::URef)][VEC],
+            [RET]CLType::URef[RET],
             EntryPointAccess::Public,
             EntryPointType::Contract,
         );
