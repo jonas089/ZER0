@@ -1,6 +1,8 @@
 # Caspiler Python
 An **inofficial tool** for **research purposes** that generates json metadata for casper smart contracts.
 
+This tool is obsolete. An ink! inspired ABI generator can be found [here](https://github.com/jonas089/claptrap) 
+
 
 ```bash
 ██     ██  █████  ██████  ███    ██ ██ ███    ██  ██████  
